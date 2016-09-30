@@ -13,7 +13,7 @@ within a single condition as well as between conditions."""
 toolchain = {'name': 'intel', 'version': '2016a'}
 
 source_urls = ['https://github.com/mad-lab/transit/archive/']
-sources = ['transit-master.zip']
+sources = ['master.zip']
 
 pyver = '2.7.11'
 versionsuffix = '-Python-%s' % pyver
@@ -22,7 +22,7 @@ versionsuffix = '-Python-%s' % pyver
 
 dependencies = [
     ('Python', '2.7.11'),
-    ('numpy', '1.8.2', versionsuffix),
+    ('numpy', '1.10.4', versionsuffix),
     ('scipy', '0.17.0', versionsuffix),
     ('matplotlib', '1.5.1', versionsuffix),
     ('wxPython', '3.0.2.0', versionsuffix),
