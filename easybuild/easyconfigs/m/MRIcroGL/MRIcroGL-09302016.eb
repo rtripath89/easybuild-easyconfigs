@@ -1,0 +1,31 @@
+# This file is an EasyBuild reciPY as per https://github.com/hpcugent/easybuild
+# Author: Ravi Tripathi
+# Email: ravi89@uab.edu
+
+easyblock = "PackedBinary"
+
+name = 'MRIcroGL'
+version = '09302016'
+
+homepage = 'https://www.nitrc.org/plugins/mwiki/index.php/dcm2nii:MainPage'
+description = """ dcm2niix as a modern tool written in the C language. 
+The advantages of the new tool is that it is simple (easier to adapt 
+to vendor extensions to DICOM), easier to specify output file names, 
+and written in a more popular language (C versus Pascal). """
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+# Automatic Download doesn't work for this software as you need to accept their license, 
+# so you can download it manually at https://www.nitrc.org/frs/?group_id=889 
+# and place it in a folder where Easybuild can see it. 
+# Also rename the zip file to lx-09302016.zip
+sources = ['lx-%(version)s.zip']
+
+checksums = ['da1c828a45b0669c9cc2a50862cd6ba0']
+
+sanity_check_paths = {
+    'files': ["dcm2niix", "MRIcroGL", "pigz_mricron"],
+    'dirs': ["script", "shaders",  "lut", "templates"]
+}
+
+moduleclass = 'bio'
