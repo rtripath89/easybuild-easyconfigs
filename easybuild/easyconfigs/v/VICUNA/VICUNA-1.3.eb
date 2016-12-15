@@ -1,0 +1,29 @@
+# This file is an EasyBuild reciPY as per https://github.com/hpcugent/easybuild
+# Author: Ravi Tripathi
+# Email: ravi89@uab.edu
+
+easyblock = "PackedBinary"
+
+name = 'VICUNA'
+version = '1.3'
+
+homepage = 'http://www.well.ox.ac.uk/~cfreeman/software/gwas/gtool.html'
+description = """  efficient intra-host de novo assembler for 
+ultra-deep sequence data"""
+
+toolchain = {'name': 'dummy', 'version': 'dummy'}
+
+# Source file needs to be downloaded manually from 
+# https://www.broadinstitute.org/viral-genomics/viral-genomics-analysis-software-registration
+sources = ['vicuna.zip']
+
+modextrapaths = {'PATH': 'executable'}
+
+checksums = ['b3a56960e06f026bc2d8b4edd00796e4']
+
+sanity_check_paths = {
+    'files': ["executable/vicuna-omp.static.linux64", "executable/readme.txt"],
+    'dirs': ["bin", "config", "db", "doc", "executable", "src"]
+}
+
+moduleclass = 'bio'
