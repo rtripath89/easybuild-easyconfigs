@@ -5,13 +5,12 @@ homepage = 'http://www.allinea.com'
 description = """The Allinea environment is an essential toolkit for developers and computational scientists
 looking to get results faster."""
 
-toolchain = {'name': 'dummy', 'version': 'dummy'}
+toolchain = SYSTEM
 
 source_urls = ['http://content.allinea.com/downloads/']
 sources = ['%(namelower)s-tools-%(version)s.tar']
 
 # license file
-import os
-license_file = os.path.join(os.getenv('HOME'), "licenses", "allinea", "license.lic")
+license_file = HOME + '/licenses/allinea/license.lic'
 
 moduleclass = 'tools'
