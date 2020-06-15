@@ -1,0 +1,20 @@
+easyblock = 'Binary'
+
+name = 'jq'
+version = '1.6'
+
+homepage = 'https://stedolan.github.io/jq/'
+description = """jq is a lightweight and flexible command-line JSON processor."""
+
+toolchain = {'name': 'GCCcore', 'version': '4.9.3'}
+
+source_urls = ['https://github.com/stedolan/%(name)s/releases/download/%(name)s-%(version)s/']
+sources = ['%(name)s-linux64']
+checksums = ['af986793a515d500ab2d35f8d2aecd656e764504b789b66d7e1a0b727a124c44']
+
+sanity_check_paths = {
+    'files': ['jq-linux64'],
+    'dirs': [],
+}
+
+moduleclass = 'tools'
