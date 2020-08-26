@@ -1,0 +1,28 @@
+# This file is an EasyBuild reciPY as per https://github.com/easybuilders/easybuild
+# Author: Ravi Tripathi
+# Email: ravi89@uab.edu
+
+easyblock = "Tarball"
+
+name = "code-server"
+version = "3.4.1"
+
+homepage = "https://code.visualstudio.com/"
+description = """ Visual Studio Code is a lightweight but powerful source code editor 
+which runs on your desktop and is available for Windows, macOS and Linux. It comes with 
+built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions 
+for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).  """
+
+toolchain = SYSTEM
+
+source_urls = ["https://github.com/cdr/code-server/releases/download/%(version)s/"]
+sources = ["%(name)s-%(version)s-linux-x86_64.tar.gz"]
+
+modextrapaths = {"PATH": ""}
+
+sanity_check_paths = {
+    "files": ["code-server", "LICENSE.txt", "postinstall.sh"],
+    "dirs": ["bin", "lib", "src"],
+}
+
+moduleclass = "tools"
