@@ -18,6 +18,8 @@ toolchain = SYSTEM
 source_urls = ["https://github.com/cdr/code-server/releases/download/%(version)s/"]
 sources = ["%(name)s-%(version)s-linux-x86_64.tar.gz"]
 
+checksums = ["957cc7bafb399b4d8c82fcfc9dc0b4e6ce50d095f2636a31320a628ada75d6a8"]
+
 modextrapaths = {"PATH": ""}
 
 sanity_check_paths = {
