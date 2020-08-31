@@ -13,14 +13,14 @@ which runs on your desktop and is available for Windows, macOS and Linux. It com
 built-in support for JavaScript, TypeScript and Node.js and has a rich ecosystem of extensions 
 for other languages (such as C++, C#, Java, Python, PHP, Go) and runtimes (such as .NET and Unity).  """
 
-toolchain = SYSTEM
+toolchain = {"name": "foss", "version": "2016a"}
 
 source_urls = ["https://github.com/cdr/code-server/releases/download/%(version)s/"]
 sources = ["%(name)s-%(version)s-linux-x86_64.tar.gz"]
 
 checksums = ["957cc7bafb399b4d8c82fcfc9dc0b4e6ce50d095f2636a31320a628ada75d6a8"]
 
-modextrapaths = {"PATH": ""}
+dependencies = [("git-extras", "5.1.0")]
 
 sanity_check_paths = {
     "files": ["code-server", "LICENSE.txt", "postinstall.sh"],
